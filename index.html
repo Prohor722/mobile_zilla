@@ -21,18 +21,20 @@
             <!-- Search  -->
             <div class="d-flex search w-75 w-sm-100 mx-auto mt-3 shadow"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="searchText" class="form-control" placeholder="Search for the phone you want"><button onclick="searchPhone()" class="btn btn-primary">Search</button> </div>
         </div>
+
         <div class="container-fluid g-0 row mt-5" id="cover">
-            <div class="col-md-4">
+            <!-- cover image  -->
+            <div class="col-lg-4 col-md-12" id="cover-image">
                 <img src="./image/cover.gif" class="img-fluid">
             </div>
+
+            <!-- cover text and phone details section  -->
             <div class="col-md-8 d-flex mx-auto" id="phoneDetails">
-                <!-- <p id="cover-text" class="fs-1 m-auto">Looking for a phone...
-                </p> -->
+
+                <!-- phone details section temporary text  -->
+                <p id="cover-text" class="fs-1 m-auto">Looking for a phone...</p>
                 
                 <!-- phone details section  -->
-                <!-- <div class="row row-cols-lg-4 d-flex align-items-center justify-content-center" id="phoneDetails">
-                    
-                </div> -->
             </div>
         </div>
     </header>
@@ -40,6 +42,11 @@
         <!-- Cards Section  -->
         <div id="cards" class="row row-cols-lg-4 row-cols-md-2 w-100 d-flex justify-content-center align-items-center mb-5">
             <!-- search cards shown here  -->
+        </div>
+
+        <!-- Show all results button  -->
+        <div class="d-flex">
+            <button id="showAll-btn" class="btn btn-brnadColor w-50 mx-auto mb-5" onclick="showAllResults()">Show All Results</button>
         </div>
     </main>
     <footer>

@@ -7,20 +7,27 @@ const searchPhone = () =>{
 
 // searched phones display 
 const displayPhones = phones => {
+    let counter = 1;
     const displayArea = document.getElementById('cards');
-
+    displayArea.innerHTML = "";
     for(const phone of phones){
         const div = document.createElement('div');
+        if(counter>20){
+            div.style.display='none';
+            document.getElementById('showAll-btn').style.display='block';
+        }
+        counter++;
         div.innerHTML = `
         <div class="card border-0 mt-5 ms-5" style="width: 12rem;">
         <img src="${phone.image}" class="card-img-top" alt="...">
         <div class="card-body text-center">
-            <small class="card-title">${phone.phone_name}</small>
-            <h5>${phone.brand}</h5>
+        <small class="card-title">${phone.phone_name}</small>
+        <h5>${phone.brand}</h5>
         </div>
         <a href="#" class="btn btn-brnadColor" onclick="phoneDetails('${phone.slug}')">Full Specficition</a>
         </div>
         `;
+        // document.getElementById('showAll-btn').style.display='block';
         displayArea.appendChild(div);
     }
 }
@@ -36,8 +43,9 @@ const phoneDetails = (id) =>{
 const displayDestails= phone =>{
     console.log(phone);
     const phoneDetails = document.getElementById('phoneDetails');
+    phoneDetails.innerHTML = ""; 
     const div = document.createElement('div');
-    div.className= 'row row-cols-lg-3 d-flex align-items-center justify-content-center"'
+    div.className= 'row row-cols-lg-3 row-cols-lg-1 d-flex align-items-center justify-content-center w-100'
     div.innerHTML= `
     <div class="details-info">
         <strong>Brand: ${phone.brand}</strong>
@@ -48,10 +56,10 @@ const displayDestails= phone =>{
         <strong>Release Date: ${phone.releaseDate}</strong>
         </div>
         
-        <div>
-        <img src="${phone.image}" class="img" alt="" srcset="">
+        <div class="p-0 m-0 d-flex">
+        <img src="${phone.image}" class="mx-auto" alt="" srcset="">
         </div>
-        <div class="details-info w-30">
+        <div class="details-info">
         <strong>WLAN: ${phone.others.WLAN}</strong>
         <strong>Bluetooth: ${phone.others.Bluetooth}</strong>
         <strong>GPS: ${phone.others.GPS}</strong>

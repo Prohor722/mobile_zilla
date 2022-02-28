@@ -42,8 +42,10 @@ body{
 }
 /* cover part  */
 #cover{
-    /* background-color: #41a9ea; */
     border: 2px solid #41a9ea;
+}
+#cover-image{
+    background-color: #41a9ea;
 }
 #cover-text{
     color: #41a9ea;
@@ -52,9 +54,9 @@ body{
 /* Product details  */
 .details-info strong{
     display: block;
-    margin: 5px 10px;
-    padding: 0px 5px;
-    color: #328dc5;
+    margin: 5px 0px 5px 10px;
+    padding: 0px;
+    color: #2771a0;
     font-weight: 300;
 }
 
@@ -72,4 +74,10 @@ main{
     border: 2px solid #41a9ea;
     color: #41a9ea;
     background-color: white;
+}
+
+/* show all results button  */
+
+#showAll-btn{
+    display: none;
 }
