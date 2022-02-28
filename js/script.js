@@ -5,6 +5,11 @@ const searchPhone = () =>{
     .then(phones=>displayPhones(phones.data));
 }
 
+// show all results button 
+const showAllBtn = (status) => {
+    document.getElementById('showAll-btn').style.display=status;
+}
+
 // searched phones display 
 const displayPhones = phones => {
     let counter = 1;
@@ -12,9 +17,12 @@ const displayPhones = phones => {
     displayArea.innerHTML = "";
     for(const phone of phones){
         const div = document.createElement('div');
+        div.className= 'card-parent';
+
+        //result limit condition
         if(counter>20){
             div.style.display='none';
-            document.getElementById('showAll-btn').style.display='block';
+            showAllBtn('block');
         }
         counter++;
         div.innerHTML = `
@@ -41,9 +49,10 @@ const phoneDetails = (id) =>{
 }
 
 const displayDestails= phone =>{
-    console.log(phone);
+
     const phoneDetails = document.getElementById('phoneDetails');
     phoneDetails.innerHTML = ""; 
+    
     const div = document.createElement('div');
     div.className= 'row row-cols-lg-3 row-cols-lg-1 d-flex align-items-center justify-content-center w-100'
     div.innerHTML= `
@@ -70,4 +79,17 @@ const displayDestails= phone =>{
     </div>
     `
     phoneDetails.appendChild(div);
+}
+
+// showing all results 
+
+const showAllResults = () =>{
+    const elements = document.getElementsByClassName('card-parent');
+    console.log(elements);
+
+    showAllBtn('none');
+
+    for(const element of elements){
+        element.style.display = "block";
+    }
 }
