@@ -5,8 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <!-- Custom Style  -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- font awsome  -->
+    <script src="./js/fontawesome.js"></script>
 </head>
 <body>
-    
+    <header>
+        <div class="container">
+            <!-- Logo  -->
+            <h1 id="logo" class="text-center mt-5">Mobile<span>Zilla</span></h1>
+            
+            <!-- Search  -->
+            <div class="d-flex search w-75 w-sm-100 mx-auto mt-3 shadow"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="form-control" placeholder="Search for the phone you want"><button class="btn btn-primary">Search</button> </div>
+        </div>
+        <div class="container-fluid g-0 row mt-5" id="cover">
+            <div class="col-md-4">
+                <img src="./image/cover.gif" class="img-fluid">
+            </div>
+            <div class="col-md-8 d-flex" id="phone-details">
+                <!-- phone details section  -->
+                <p id="cover-text" class="fs-1 m-auto">Looking for a phone...
+                </p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="cards">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+    </main>
+    <footer>
+        <!-- Bootstrap JS  -->
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <!-- Custom JS  -->
+        <script src="./js/script.js"></script>
+    </footer>
 </body>
 </html>
