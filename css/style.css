@@ -49,9 +49,18 @@ body{
     color: #41a9ea;
     font-weight: 700;
 }
+
+/* Cards Section  */
 main{
     font-weight: 500;
 }
+
 .btn-brnadColor{
     background-color: #41a9ea;
+    border: 2px solid #127cbe;
+}
+.btn-brnadColor:hover{
+    border: 2px solid #41a9ea;
+    color: #41a9ea;
+    background-color: white;
 }

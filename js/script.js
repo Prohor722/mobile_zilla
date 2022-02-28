@@ -5,14 +5,33 @@ const searchPhone = () =>{
     .then(phones=>displayPhones(phones.data));
 }
 
+// searched phones display 
 const displayPhones = phones => {
-    console.log(phones);
+    const displayArea = document.getElementById('cards');
+
+    for(const phone of phones){
+        const div = document.createElement('div');
+        div.innerHTML = `
+        <div class="card border-0 mt-5 ms-5" style="width: 12rem;">
+        <img src="${phone.image}" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+            <h4 class="card-title">${phone.brand}</h4>
+            <h5>${phone.name}</h5>
+        </div>
+        <a href="#" class="btn btn-brnadColor">Full Specficition</a>
+        </div>
+        `;
+        displayArea.appendChild(div);
+    }
 }
-{/* <div class="card ms-5" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-    <a href="#" class="btn btn-brnadColor">Go somewhere</a>
-</div> */}
+
+// phone details 
+
+const phoneDetails = (id) =>{
+    console.log(id);
+    const phoneDetails = document.getElementById('phoneDetails');
+    phoneDetails.innerHTML= `
+    
+
+    `
+}
