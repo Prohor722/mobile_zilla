@@ -51,6 +51,14 @@ body{
     color: #41a9ea;
     font-weight: 700;
 }
+
+/* Spinner  */
+#spinner{
+    height: 150px;
+    width: 200px;
+    display: none;
+}
+
 /* Product details  */
 .details-info strong{
     display: block;

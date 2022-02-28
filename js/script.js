@@ -5,13 +5,27 @@ const searchPhone = () =>{
     .then(phones=>displayPhones(phones.data));
 }
 
-// show all results button 
+// show/block all results button 
 const showAllBtn = (status) => {
     document.getElementById('showAll-btn').style.display=status;
 }
 
+// show/block spinner
+const showSpinner = (status) => {
+    document.getElementById('spinner').style.display=status;
+}
+
+// show/block cover text
+const showCoverText = (status) => {
+    document.getElementById('cover-text').style.display=status;
+}
+
 // searched phones display 
 const displayPhones = phones => {
+
+    showCoverText('none');
+    showSpinner('block');
+
     let counter = 1;
     const displayArea = document.getElementById('cards');
     displayArea.innerHTML = "";
@@ -22,7 +36,6 @@ const displayPhones = phones => {
         //result limit condition
         if(counter>20){
             div.style.display='none';
-            showAllBtn('block');
         }
         counter++;
         div.innerHTML = `
@@ -35,14 +48,19 @@ const displayPhones = phones => {
         <a href="#" class="btn btn-brnadColor" onclick="phoneDetails('${phone.slug}')">Full Specficition</a>
         </div>
         `;
-        // document.getElementById('showAll-btn').style.display='block';
+        showSpinner('none');
         displayArea.appendChild(div);
+        showAllBtn('block');
     }
 }
 
 // phone details 
 
 const phoneDetails = (id) =>{
+
+    // showSpinner('block');
+    // showCoverText('none');
+
     fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
     .then(res=>res.json())
     .then(phone=> displayDestails(phone.data))
@@ -78,6 +96,8 @@ const displayDestails= phone =>{
         <strong>Sensors: ${phone.mainFeatures.sensors.join(', ')}</strong>
     </div>
     `
+    // showSpinner('none');
+    // showCoverText('none'); 
     phoneDetails.appendChild(div);
 }
 
