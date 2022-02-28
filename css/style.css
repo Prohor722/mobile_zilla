@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
 body{
     font-family: 'Poppins', sans-serif;
@@ -48,6 +48,14 @@ body{
 #cover-text{
     color: #41a9ea;
     font-weight: 700;
+}
+/* Product details  */
+.details-info strong{
+    display: block;
+    margin: 5px 10px;
+    padding: 0px 5px;
+    color: #328dc5;
+    font-weight: 300;
 }
 
 /* Cards Section  */
