@@ -15,20 +15,27 @@ const displayPhones = phones => {
         <div class="card border-0 mt-5 ms-5" style="width: 12rem;">
         <img src="${phone.image}" class="card-img-top" alt="...">
         <div class="card-body text-center">
-            <h4 class="card-title">${phone.brand}</h4>
-            <h5>${phone.name}</h5>
+            <small class="card-title">${phone.phone_name}</small>
+            <h5>${phone.brand}</h5>
         </div>
-        <a href="#" class="btn btn-brnadColor">Full Specficition</a>
+        <a href="#" class="btn btn-brnadColor" onclick="phoneDetails('${phone.slug}')">Full Specficition</a>
         </div>
         `;
         displayArea.appendChild(div);
+        console.group(phone);
     }
 }
 
 // phone details 
 
 const phoneDetails = (id) =>{
-    console.log(id);
+    fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
+    .then(res=>res.json())
+    .then(phone=> displayDestails(phone.data))
+    
+}
+
+const displayDestails= phone =>{
     const phoneDetails = document.getElementById('phoneDetails');
     phoneDetails.innerHTML= `
     

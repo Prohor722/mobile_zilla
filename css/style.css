@@ -57,7 +57,8 @@ main{
 
 .btn-brnadColor{
     background-color: #41a9ea;
-    border: 2px solid #127cbe;
+    border: 2px solid #ffffff;
+    color: white;
 }
 .btn-brnadColor:hover{
     border: 2px solid #41a9ea;
