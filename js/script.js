@@ -1,8 +1,20 @@
 const searchPhone = () =>{
+
+    emptyPhoneDetails();
+    showCoverText('none');
+    showSpinner('block');
+
     const searchText = document.getElementById('searchText').value;
+    document.getElementById('searchText').value= "";
+
     fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`)
     .then(res=> res.json())
     .then(phones=>displayPhones(phones.data));
+}
+
+// empty phone details info
+const emptyPhoneDetails = () => {
+    document.getElementById('phoneDetails').innerHTML= "";
 }
 
 // show/block all results button 
@@ -22,9 +34,6 @@ const showCoverText = (status) => {
 
 // searched phones display 
 const displayPhones = phones => {
-
-    showCoverText('none');
-    showSpinner('block');
 
     let counter = 1;
     const displayArea = document.getElementById('cards');
@@ -49,6 +58,7 @@ const displayPhones = phones => {
         </div>
         `;
         showSpinner('none');
+        showCoverText('block');
         displayArea.appendChild(div);
         showAllBtn('block');
     }
@@ -58,8 +68,8 @@ const displayPhones = phones => {
 
 const phoneDetails = (id) =>{
 
-    // showSpinner('block');
-    // showCoverText('none');
+    showSpinner('block');
+    showCoverText('none');
 
     fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
     .then(res=>res.json())
@@ -96,7 +106,7 @@ const displayDestails= phone =>{
         <strong>Sensors: ${phone.mainFeatures.sensors.join(', ')}</strong>
     </div>
     `
-    // showSpinner('none');
+    showSpinner('none');
     // showCoverText('none'); 
     phoneDetails.appendChild(div);
 }
