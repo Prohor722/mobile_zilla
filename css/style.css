@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap');
 
 body{
     font-family: 'Poppins', sans-serif;
@@ -51,6 +51,11 @@ body{
     color: #41a9ea;
     font-weight: 700;
 }
+#cover-text:hover{
+    transition: color 3s ease-in-out;
+    color: #0a0a0a;
+    font-weight: 700;
+}
 
 /* Spinner  */
 #spinner{
@@ -72,6 +77,9 @@ body{
 /* Cards Section  */
 main{
     font-weight: 500;
+}
+.card-parent{    
+    display: contents;
 }
 
 .btn-brnadColor{
