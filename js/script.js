@@ -20,7 +20,7 @@ const searchPhone = () =>{
         errorHandle('Please enter something to show !!');
     }
     else{
-        
+
         fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`)
         .then(res=> res.json())
         .then(phones=>{
@@ -69,7 +69,7 @@ const displayPhones = phones => {
     displayArea.innerHTML = "";
     for(const phone of phones){
         const div = document.createElement('div');
-        div.className= 'card-parent';
+        div.className= 'card-parent mx-auto mt-5';
 
         // console.log("phone:",phone);
         //result limit condition
@@ -78,7 +78,7 @@ const displayPhones = phones => {
         }
         counter++;
         div.innerHTML = `
-        <div class="card border-0 mt-5 ms-5" style="width: 12rem;">
+        <div class="card border-0 mt-5 md:ms-5 mx-auto" style="width: 16rem;">
         <img src="${phone.image}" class="card-img-top" alt="...">
         <div class="card-body text-center">
         <small class="card-title">${phone.phone_name}</small>
@@ -99,8 +99,6 @@ const displayPhones = phones => {
 
 const phoneDetails = (id) =>{
 
-    console.log(id);
-    // emptyPhoneDetails();
     showCoverText('none');
     showSpinner('block');
 
@@ -112,6 +110,7 @@ const phoneDetails = (id) =>{
 // display phone details
 const displayDestails= phone =>{
 
+    console.log(phone);
     const phoneDetails = document.getElementById('phoneDetails');
     phoneDetails.innerHTML = ""; 
     const msg = ' no info available';
@@ -122,9 +121,11 @@ const displayDestails= phone =>{
     div.innerHTML= `
     <div class="details-info">
         
-        <strong>Brand: ${(phone?.brand==undefined)? msg:phone.brand}</strong>
+        <strong>Brand: ${(phone?.brand=="")? msg:phone.brand}</strong>
 
-        <strong>Model: ${(phone?.name==undefined)? msg:phone.name}</strong>
+        <strong>Model: ${(phone?.name=="")? msg:phone.name}</strong>
+
+        <strong>Release Date: ${(phone?.releaseDate=="")? "No release date found.":phone.releaseDate}</strong>
         
         <strong>Display: ${(phone?.mainFeatures?.displaySize==undefined)? msg:phone.mainFeatures.displaySize}</strong>
         
@@ -132,12 +133,13 @@ const displayDestails= phone =>{
         
         <strong>Memory: ${(phone?.mainFeatures?.memory==undefined)? msg:phone.mainFeatures.memory}</strong>
         
-        <strong>Release Date: ${(phone?.releaseDate==undefined)? msg:phone.releaseDate}</strong>
+
         </div>
         
         <div class="p-0 m-0 d-flex">
-        <img src="${(phone?.image==undefined)? image:phone.image}" class="mx-auto" alt="" srcset="">
+        <img src="${(phone?.image=="")? image:phone.image}" class="mx-auto" alt="" srcset="">
         </div>
+
         <div class="details-info">
         <strong>WLAN: ${(phone?.others?.WLAN==undefined)? msg:phone.others.WLAN}</strong>
         <strong>Bluetooth: ${(phone?.others?.Bluetooth==undefined)? msg:phone.others.Bluetooth}</strong>

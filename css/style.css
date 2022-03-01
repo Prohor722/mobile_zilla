@@ -64,8 +64,7 @@ body{
     display: none;
 }
 
-/* Product details  */
-
+/* Phone details  */
 .details-info strong{
     display: block;
     margin: 5px 0px 5px 10px;
@@ -78,9 +77,9 @@ body{
 main{
     font-weight: 500;
 }
-.card-parent{    
+/* .card-parent{    
     display: contents;
-}
+} */
 
 .btn-brnadColor{
     background-color: #41a9ea;
@@ -98,3 +97,30 @@ main{
 #showAll-btn{
     display: none;
 }
+
+/* footer section  */
+footer{
+    height: 200px;
+    background-color: #41a9ea;
+    color: #ffffff;
+}
+#social-icons a{
+    color: #ffffff;
+    font-size: 30px;
+    padding: 10px;
+}
+
+/* spinner and search-bar responsive  */
+@media only screen and (min-width: 732px) {
+    #spinner {
+      margin-left: -100% !important;
+    }
+  }
+@media only screen and (max-width: 731px) {
+    #spinner {
+      margin-left: -30% !important;
+    }
+    #search{
+        width: 100% !important;
+    }
+  }

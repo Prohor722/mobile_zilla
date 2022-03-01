@@ -20,7 +20,11 @@
             <h1 id="logo" class="text-center mt-5">Mobile<span>Zilla</span></h1>
             
             <!-- Search  -->
-            <div class="d-flex search w-75 w-sm-100 mx-auto mt-3 shadow"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="searchText" class="form-control" placeholder="Search for the phone you want"><button onclick="searchPhone()" class="btn btn-primary">Search</button> </div>
+            <div class="d-flex search w-75 mx-auto mt-3 shadow" id="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchText" class="form-control" placeholder="Search for the phone you want">
+                <button onclick="searchPhone()" class="btn btn-primary">Search</button> 
+            </div>
         </div>
 
         <div class="container-fluid g-0 row mt-5" id="cover">
@@ -46,17 +50,13 @@
                 <div class="d-flex m-auto">
                     <img src="./image/loading.gif" id="spinner" alt="loading" class="m-auto">
                 </div>
-                <!-- loading spinner  -->
-                <div class="d-flex m-auto">
-                    <img src="./image/loading.gif" id="spinner" alt="loading" class="m-auto">
-                </div>
                 
             </div>
         </div>
     </header>
     <main class="container">
         <!-- Cards Section  -->
-        <div id="cards" class="row row-cols-lg-4 row-cols-md-3 w-100 d-flex justify-content-center align-items-center mb-5">
+        <div id="cards" class="row row-cols-lg-3 row-cols-md-2 w-100 d-flex mb-5">
             <!-- search cards shown here  -->
         </div>
 
@@ -66,6 +66,23 @@
         </div>
     </main>
     <footer>
+
+        <!-- footer section  -->
+        <div class="d-flex flex-column text-center align-items-center pt-5">
+            <p>
+                Copyright © 2025 MobileZilla
+                <br>
+                All rights reserved by Prohor Banik
+            </p>
+            <div id="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=100010964319725" target="_blank"><i class="fa-brands fa-facebook-square"></i></a>
+
+                <a href="https://www.instagram.com/phonearena/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+
+                <a href="https://www.youtube.com/c/PhoneArena" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="prohor.b722@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
         <!-- Bootstrap JS  -->
         <script src="./js/bootstrap.bundle.min.js"></script>
         <!-- Custom JS  -->
